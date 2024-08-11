@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bulls and Cows Game</title>
+  </head>
+
+  <body>
+    <h1>Bulls and Cows Game</h1>
+
+    <button onclick="startGame()">Start</button>
+
+    <!-- //TODO add Start button -->
+    <!-- <label for="combination1">Enter combination:</label>
+    <input type="text" id="combination1" placeholder="Enter combination">
+    <button onclick="checkCombination()">Submit</button>
+    <span id="curResult1"></span> -->
+
+    <div id="attemptsContainer"></div>
+
+    <p id="greeting"></p>
+
+    <script>
+      var maxAttempts = 10;
+      var currentAttempts = 1;
+      var uniqueDigitSequence = generateUniqueDigitsSequence();
+      var currentResult = "0B0C";
+      var inputId = "combination";
+      var currentResultId = "curResult";
+      var startTime = -1;
+      var endTime = -1;
+
+
+      function startGame() {
+        addNextAttempt();
+      }
+
+      function generateUniqueDigitsSequence() {
+        var uniqueDigitSequence = "";
+
+        for (var i = 0; i < 3; i++) {
+            var uniqueDigit = generateUniqueDigit(uniqueDigitSequence);
+            uniqueDigitSequence = uniqueDigitSequence + uniqueDigit;
+        }
+
+        console.log("Generated sequence is: " + uniqueDigitSequence)
+        return uniqueDigitSequence;
+      }
+
+      function generateUniqueDigit(uniqueDigitSequence) {
+       var num = Math.floor(Math.random() * 10);
+
+       while(uniqueDigitSequence.includes(num)) {
+        num = Math.floor(Math.random() * 10);
+       }
+       
+       return num;
+      }
+
+      function checkCombination() {
+          if (startTime == -1){
+            startTime = Date.now();
+          }
+          console.log("Input field id: " + inputId + currentAttempts)
+          var inputCombination = document.getElementById(inputId + currentAttempts).value;
+
+          if (compareInputWithActualCombination(inputCombination, uniqueDigitSequence)) {
+            endTime = Date.now();
+            document.getElementById("curResult" + currentAttempts).innerText = " " + currentResult;
+            document.getElementById("greeting").innerText = "You won, the secret combination was " + uniqueDigitSequence + "!\n" + "Total attempts: " + currentAttempts + "\n" + "Total time: " + (endTime - startTime)/1000 + "s.";
+          } else {
+              if (currentAttempts == maxAttempts) {
+                document.getElementById("greeting").innerText = "Goog luck next time, the secret combination was: " + uniqueDigitSequence;
+              } else {
+                document.getElementById("curResult" + currentAttempts).innerText = " " + currentResult;
+                currentAttempts++;
+                addNextAttempt();
+              }
+          }
+      }
+
+
+      function compareInputWithActualCombination(userGuess, generatedCombination) {
+        var bulls = 0;
+        var cows = 0;
+
+        for (var i = 0; i < userGuess.length; i++) {
+            if (userGuess[i] == generatedCombination[i]) {
+                bulls++;
+            } else if (generatedCombination.includes(userGuess[i])) {
+                cows++;
+            }
+        }
+        currentResult = bulls + "B " + cows + "C";
+
+        return bulls == 3;
+      }
+
+      function addNextAttempt() {
+            // Create a new paragraph element
+            var attemptContainer = document.createElement("div");
+
+            var label = document.createElement("label");
+            label.setAttribute("for", inputId + currentAttempts);
+            label.innerText = currentAttempts + ". ";//"Enter combination: ";
+            attemptContainer.appendChild(label);
+
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("id", inputId + currentAttempts);
+            attemptContainer.appendChild(input);
+
+            var button = document.createElement("button");
+            button.textContent = "Submit";
+            button.style.display = "none";
+            button.onclick = checkCombination;
+            attemptContainer.appendChild(button);
+
+            var currentResult = document.createElement("span");
+            currentResult.setAttribute("id", currentResultId + currentAttempts);
+            attemptContainer.appendChild(currentResult);
+
+            // Find the container element
+            var container = document.getElementById("attemptsContainer");
+
+            // Append the new paragraph to the container
+            container.appendChild(attemptContainer);
+
+            input.focus();
+
+            input.addEventListener("keypress", function(event) {
+              // If the user presses the "Enter" key on the keyboard
+              if (event.key === "Enter") {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                button.click();
+              }
+});
+        }
+  </script>
+  </body>
+</html>
