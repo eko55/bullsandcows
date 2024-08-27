@@ -1,0 +1,126 @@
+/* <!-- HTML !-->
+<button class="button-37" role="button">Button 37</button> */
+
+body {
+  background: url(/resources/cow.jpg);
+  margin: 15vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+}
+
+.main-flex-container {
+  display: flex;
+  flex-direction: column;
+  background: transparent;/* peachpuff;*/
+}
+
+h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  background: transparent;/* peachpuff;*/
+  border: 4px solid blue;
+  margin: 16px;
+  /* background-color: lightblue; */
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-container label {
+  background: peachpuff;
+  border: 4px solid brown;
+  flex: 1;
+  margin: 16px;
+  height: 10vh;
+  text-align: center;
+  flex-direction: column;
+  font-size: 8vh;
+  /* box-sizing: border-box; */
+  /* width: 50vw; */
+}
+
+/* this selector selects all divs inside of .flex-container */
+.flex-container input {
+  background: transparent;/* peachpuff;*/
+  background-color: lightblue;
+  border: 4px solid brown;
+  /* height: 150px; */
+  flex: 1;
+  margin: 16px;
+
+  height: 10vh; /*10% of the viewport height*/
+  text-align: center;
+  flex-direction: column;
+  font-size: 8vh;
+  /* box-sizing: border-box; */
+  /* width: 50vw; */
+}
+
+.flex-container span {
+  background: peachpuff;
+  border: 4px solid brown;
+  /* height: 150px; */
+  flex: 1;
+  margin: 16px;
+
+  height: 10vh; /*10% of the viewport height*/
+  text-align: center;
+  flex-direction: column;
+  font-size: 8vh;
+  /* box-sizing: border-box; */
+  /* width: 50vw; */
+}
+
+/* CSS */
+#startBtn {
+  background-color: #13aa52;
+  /* border: 1px solid #13aa52; */
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Akzidenz Grotesk BQ Medium', -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#startBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+#startBtn:disabled {
+  color: #666;
+  background-color: #d6d0d0;
+}
+
+@media (min-width: 768px) {
+  #startBtn {
+    padding: 10px 30px;
+  }
+}
+
+.square-inputa {
+  width: 100px; /* Set the width */
+  height: 100px; /* Set the height to the same value as width */
+  box-sizing: border-box; /* Ensures padding and border do not affect the size */
+  padding: 10px; /* Optional padding */
+  font-size: 16px; /* Font size for the input text */
+}
