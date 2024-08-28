@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Бикове и Крави </title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index-bg.js"></script>
+  </head>
+
+  <body>
+    <div class="main-flex-container">
+      <nav>
+        <a href="index.html">English</a> |
+        <a href="index-bg.html">Български</a>
+      </nav>
+      <h1>Бикове и Крави</h1>
+      <button id="infoBtn" onclick="showRules()">Правила на играта</button>
+      <p id="info">
+        "Целта е да отгатнете тайния код с възможно най-малко опити. Всички
+        цифри трябва да се различават. Ако съвпадащите числа са на правилните
+        позиции - те са "бикове", ако са на различни позиции - те са "крави".
+        Пример: Тайно число: 427, Опит за отгатване: 324, Отговор: 1 бик и 1
+        крава. (Бикът е "2", кравата е "4".)
+      </p>
+      <button id="startBtn" onclick="startGame()">Start</button>
+      <div id="attemptsContainer" class="flex-container"></div>
+      <p id="greeting"></p>
+    </div>
+  </body>
+</html>

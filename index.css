@@ -159,7 +159,8 @@ h1 {
 
 #info {
   /* color: rgb(241, 165, 99); */
-  background: peachpuff;
+  background: lightblue;
   border: solid white;
   width: 40vw;
+  display: none;
 }
