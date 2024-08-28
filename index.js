@@ -15,6 +15,19 @@ function startGame() {
   addNextAttempt();
 }
 
+function showRules() {
+  let info = document.getElementById('info');
+  let infoBtn = document.getElementById('infoBtn');
+
+  if (info.style.display === "none") {
+    info.style.display = "block";
+    infoBtn.innerText = "Hide Rules";
+  } else {
+    info.style.display = "none";
+    infoBtn.innerText = "Show Rules";
+  }
+}
+
 function showTimer() {}
 
 function generateUniqueDigitsSequence() {
@@ -148,7 +161,10 @@ function addNextAttempt() {
       // Cancel the default action, if needed
       event.preventDefault();
       // Trigger the button element with a click
-      if (nextAttemptInputField.value.length != 3 || !nextAttemptInputField.value.match(/^[0-9]{3}$/)) {
+      if (
+        nextAttemptInputField.value.length != 3 ||
+        !nextAttemptInputField.value.match(/^[0-9]{3}$/)
+      ) {
         alert('Enter 3 digit number');
       } else {
         nextAttemptSubmitButton.click();

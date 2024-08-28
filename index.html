@@ -10,6 +10,14 @@
   <body>
     <div class="main-flex-container">
       <h1>Bulls and Cows</h1>
+      <button id="infoBtn" onclick="showRules()">Show Rules</button>
+      <p id="info">
+        The aim is to decipher the secret code by trial and error. The digits
+        must be all different.If the matching digits are in their right
+        positions, they are "bulls", if in different positions, they are "cows".
+        Example: Secret number: 4271 Opponent's try: 1234 Answer: 1 bull and 2
+        cows. (The bull is "2", the cows are "4" and "1".)"
+      </p>
       <button id="startBtn" onclick="startGame()">Start</button>
       <div id="attemptsContainer" class="flex-container"></div>
       <p id="greeting"></p>
