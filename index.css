@@ -2,7 +2,10 @@
 <button class="button-37" role="button">Button 37</button> */
 
 body {
-  background: url(/resources/cow.jpg);
+  background: url(./resources/cow.jpg);
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
   margin: 15vh;
   height: 100vh;
   display: flex;
@@ -13,19 +16,22 @@ body {
 .main-flex-container {
   display: flex;
   flex-direction: column;
-  background: transparent;/* peachpuff;*/
+  background: transparent; /* peachpuff;*/
+  /* align-items: flex-start; */
 }
 
 h1 {
   flex: 1;
   text-align: center;
+  /* color: #13aa52; */
+  font-size: 6vh;
 }
 
 .flex-container {
   display: flex;
-  background: transparent;/* peachpuff;*/
-  border: 4px solid blue;
-  margin: 16px;
+  background: transparent; /* peachpuff;*/
+  /* border: 4px solid blue; */
+  /* margin: 16px; */
   /* background-color: lightblue; */
   text-align: center;
   align-items: center;
@@ -33,8 +39,9 @@ h1 {
 }
 
 .flex-container label {
-  background: peachpuff;
-  border: 4px solid brown;
+  /* background: peachpuff; */
+  /* border: 4px solid brown; */
+  color: rgb(241, 165, 99);
   flex: 1;
   margin: 16px;
   height: 10vh;
@@ -47,9 +54,9 @@ h1 {
 
 /* this selector selects all divs inside of .flex-container */
 .flex-container input {
-  background: transparent;/* peachpuff;*/
-  background-color: lightblue;
-  border: 4px solid brown;
+  background: transparent; /* peachpuff;*/
+  background-color: peachpuff;
+  /* border: 4px solid brown; */
   /* height: 150px; */
   flex: 1;
   margin: 16px;
@@ -63,9 +70,10 @@ h1 {
 }
 
 .flex-container span {
-  background: peachpuff;
-  border: 4px solid brown;
+  /* background: peachpuff; */
+  /* border: 4px solid brown; */
   /* height: 150px; */
+  color: rgb(241, 165, 99);
   flex: 1;
   margin: 16px;
 
@@ -79,6 +87,7 @@ h1 {
 
 /* CSS */
 #startBtn {
+  flex: 1;
   background-color: #13aa52;
   /* border: 1px solid #13aa52; */
   border-radius: 4px;
@@ -123,4 +132,11 @@ h1 {
   box-sizing: border-box; /* Ensures padding and border do not affect the size */
   padding: 10px; /* Optional padding */
   font-size: 16px; /* Font size for the input text */
+}
+
+#greeting {
+  flex: 1;
+  text-align: center;
+  color: #13aa52;
+  font-size: 3vh;
 }

@@ -106,6 +106,8 @@ function createNextAttemptInputField() {
   const input = document.createElement('input');
   input.setAttribute('class', 'square-input');
   input.setAttribute('type', 'text');
+  input.setAttribute('maxlength', 3); //The input maxlength attribute specifies the maximum number of characters allowed in an input field.
+  input.setAttribute('size', 3); //The input size attribute specifies the visible width, in characters, of an input field.
   input.setAttribute('id', inputId + currentAttempts);
   return input;
 }
@@ -145,8 +147,12 @@ function addNextAttempt() {
       // Cancel the default action, if needed
       event.preventDefault();
       // Trigger the button element with a click
-      nextAttemptSubmitButton.click();
-      nextAttemptInputField.disabled = true;
+      if (nextAttemptInputField.value.length != 3 || !nextAttemptInputField.value.match(/^[0-9]{3}$/)) {
+        alert('Enter 3 digit number');
+      } else {
+        nextAttemptSubmitButton.click();
+        nextAttemptInputField.disabled = true;
+      }
     }
   });
 }
