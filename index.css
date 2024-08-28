@@ -4,11 +4,11 @@
 body {
   background: url(./resources/cow.jpg);
   background-size: cover; /* <------ */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center center;
   margin: 15vh;
   height: 100vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
 }
@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   background: transparent; /* peachpuff;*/
   /* align-items: flex-start; */
+  align-items: center;
 }
 
 h1 {
@@ -38,49 +39,62 @@ h1 {
   flex-direction: column;
 }
 
-.flex-container label {
+.attempt-container {
+  flex: 1;
+  display: flex;
+  background: transparent;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  width: 80vw;
+  margin: 1vh;
+  /* border: 4px solid brown; */
+}
+
+.attempt-container label {
   /* background: peachpuff; */
   /* border: 4px solid brown; */
   color: rgb(241, 165, 99);
   flex: 1;
-  margin: 16px;
-  height: 10vh;
+  /* margin: 16px;
+  height: 10vh; */
   text-align: center;
-  flex-direction: column;
-  font-size: 8vh;
+  /* flex-direction: column; */
+  font-size: 8vw;
   /* box-sizing: border-box; */
   /* width: 50vw; */
 }
 
 /* this selector selects all divs inside of .flex-container */
-.flex-container input {
+.attempt-container input {
   background: transparent; /* peachpuff;*/
   background-color: peachpuff;
   /* border: 4px solid brown; */
   /* height: 150px; */
   flex: 1;
-  margin: 16px;
+  /* margin: 16px;
 
-  height: 10vh; /*10% of the viewport height*/
+  height: 10vh;  */
   text-align: center;
-  flex-direction: column;
-  font-size: 8vh;
+  /* flex-direction: column; */
+  font-size: 8vw;
   /* box-sizing: border-box; */
   /* width: 50vw; */
 }
 
-.flex-container span {
+.attempt-container span {
   /* background: peachpuff; */
   /* border: 4px solid brown; */
   /* height: 150px; */
   color: rgb(241, 165, 99);
   flex: 1;
-  margin: 16px;
+  /* margin: 16px;
 
-  height: 10vh; /*10% of the viewport height*/
+  height: 10vh; */
   text-align: center;
-  flex-direction: column;
-  font-size: 8vh;
+  /* flex-direction: column; */
+  font-size: 8vw;
+  white-space: nowrap;
   /* box-sizing: border-box; */
   /* width: 50vw; */
 }
@@ -88,6 +102,8 @@ h1 {
 /* CSS */
 #startBtn {
   flex: 1;
+  width: 20vw;
+
   background-color: #13aa52;
   /* border: 1px solid #13aa52; */
   border-radius: 4px;

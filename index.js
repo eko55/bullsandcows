@@ -122,6 +122,7 @@ function createNextAttemptSubmitButton() {
 
 function addNextAttempt() {
   const attemptContainer = document.createElement('div');
+  attemptContainer.setAttribute('class', 'attempt-container');
 
   attemptContainer.appendChild(createNextAttemptLabel());
 
