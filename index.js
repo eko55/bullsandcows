@@ -15,16 +15,20 @@ function startGame() {
   addNextAttempt();
 }
 
+function retry() {
+  location.reload();
+}
+
 function showRules() {
   let info = document.getElementById('info');
   let infoBtn = document.getElementById('infoBtn');
 
-  if (info.style.display === "none") {
-    info.style.display = "block";
-    infoBtn.innerText = "Hide Rules";
+  if (info.style.display === 'none') {
+    info.style.display = 'block';
+    infoBtn.innerText = 'Hide Rules';
   } else {
-    info.style.display = "none";
-    infoBtn.innerText = "Show Rules";
+    info.style.display = 'none';
+    infoBtn.innerText = 'Show Rules';
   }
 }
 
@@ -77,7 +81,9 @@ function checkCombination() {
       'Total time: ' +
       (endTime - startTime) / 1000 +
       's.';
-    document.getElementById('greeting').focus();
+    // document.getElementById('greeting').focus();
+    let retryBtn = document.getElementById('retryBtn');
+    retryBtn.style.display = 'block';
   } else {
     if (currentAttempts == maxAttempts) {
       document.getElementById('greeting').innerText =

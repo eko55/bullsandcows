@@ -26,6 +26,7 @@ h1 {
   text-align: center;
   /* color: #13aa52; */
   font-size: 6vh;
+  color: #13aa52;
 }
 
 .flex-container {
@@ -103,27 +104,10 @@ h1 {
 #startBtn {
   flex: 1;
   width: 20vw;
-
+  font-size: 5vh;
   background-color: #13aa52;
-  /* border: 1px solid #13aa52; */
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Akzidenz Grotesk BQ Medium', -apple-system, BlinkMacSystemFont,
-    sans-serif;
-  font-size: 4vw;
-  font-weight: 400;
-  outline: none;
-  outline: 0;
-  padding: 10px 25px;
-  text-align: center;
-  transform: translateY(0);
-  transition: transform 150ms, box-shadow 150ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  color: white;
+  margin: 1vh;
 }
 
 #startBtn:hover {
@@ -136,11 +120,11 @@ h1 {
   background-color: #d6d0d0;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   #startBtn {
     padding: 10px 30px;
   }
-}
+} */
 
 .square-inputa {
   width: 100px; /* Set the width */
@@ -158,9 +142,35 @@ h1 {
 }
 
 #info {
-  /* color: rgb(241, 165, 99); */
   background: lightblue;
   border: solid white;
   width: 40vw;
   display: none;
+}
+
+#infoBtn {
+  flex: 1;
+  width: 20vw;
+  font-size: 3vh;
+  background-color: #13aa52;
+  color: white;
+}
+
+#infoBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+#retryBtn {
+  flex: 1;
+  width: 20vw;
+  margin-bottom: 5vh;
+  font-size: 3vh;
+  background-color: #13aa52;
+  display: none;
+}
+
+#retryBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
 }

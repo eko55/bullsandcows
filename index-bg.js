@@ -15,16 +15,20 @@ function startGame() {
   addNextAttempt();
 }
 
+function retry() {
+  location.reload();
+}
+
 function showRules() {
   let info = document.getElementById('info');
   let infoBtn = document.getElementById('infoBtn');
 
-  if (info.style.display === "none") {
-    info.style.display = "block";
-    infoBtn.innerText = "Правила на играта";
+  if (info.style.display === 'none') {
+    info.style.display = 'block';
+    infoBtn.innerText = 'Правила на играта';
   } else {
-    info.style.display = "none";
-    infoBtn.innerText = "Правила на играта";
+    info.style.display = 'none';
+    infoBtn.innerText = 'Правила на играта';
   }
 }
 
@@ -68,21 +72,23 @@ function checkCombination() {
     document.getElementById('curResult' + currentAttempts).innerText =
       ' ' + currentResult;
     document.getElementById('greeting').innerText =
-      'You won, the secret combination was ' +
+      'Печелиш, тайната комбинация беше ' +
       uniqueDigitSequence +
       '!\n' +
-      'Total attempts: ' +
+      'Брой опити: ' +
       currentAttempts +
       '\n' +
-      'Total time: ' +
+      'Време: ' +
       (endTime - startTime) / 1000 +
       's.';
-    document.getElementById('greeting').focus();
+
+    // document.getElementById('greeting').focus();
+    let retryBtn = document.getElementById('retryBtn');
+    retryBtn.style.display = 'block';
   } else {
     if (currentAttempts == maxAttempts) {
       document.getElementById('greeting').innerText =
-        'Goog luck next time, the secret combination was: ' +
-        uniqueDigitSequence;
+        'Успех следващия път, тайната комбинация беше: ' + uniqueDigitSequence;
     } else {
       document.getElementById('curResult' + currentAttempts).innerText =
         ' ' + currentResult;
